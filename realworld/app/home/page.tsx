@@ -1,10 +1,9 @@
 import React from 'react';
+import HomeHeader from "@/projects-component/homeHeader";
 
 const Page = () => {
     return (
-        <div>
-            son
-        </div>
+       <HomeHeader />
     );
 };
 

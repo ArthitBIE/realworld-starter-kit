@@ -5,8 +5,8 @@ const MainHeader = () => {
     return (
         <nav className="main-header">
             <Link href="/" className=" pr-4 ">home</Link>
-            <Link href="/sign-in" className=" pr-4 ">login</Link>
-            <Link href="/sign-up" className=" pr-4 ">register</Link>
+            <Link href="/sign-in" className=" pr-4 ">Sign in</Link>
+            <Link href="/sign-up" className=" pr-4 ">Sign up</Link>
         </nav>
     );
 };

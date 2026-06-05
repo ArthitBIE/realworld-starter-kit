@@ -10,7 +10,7 @@ export const GoogleSignIn = async () => {
     try {
         const data = await authClient.signIn.social({
             provider: "google",
-            callbackURL: "/", // Where to send the user after successful login
+            callbackURL: "/home", // Where to send the user after successful login
         });
         return data;
     } catch (error) {
