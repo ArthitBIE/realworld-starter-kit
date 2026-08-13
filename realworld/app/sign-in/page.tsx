@@ -1,16 +1,9 @@
 "use client"
-import { Button } from "@/components/ui/button"
-import {
-    Card,
-    CardAction,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import {FaGoogle} from "react-icons/fa";
+import {Button} from "@/components/ui/button"
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,} from "@/components/ui/card"
+import {Input} from "@/components/ui/input"
+import {Label} from "@/components/ui/label"
 import Link from "next/link";
 import {GoogleSignIn} from "@/lib/auth-client";
 
@@ -22,11 +15,6 @@ export default function FormAuth() {
                 <CardDescription>
                     Enter your email below to login to your account
                 </CardDescription>
-                <CardAction>
-                   <Link href="">
-                       <Button variant="link">Sign Up</Button>
-                   </Link>
-                </CardAction>
             </CardHeader>
             <CardContent>
                 <form>
@@ -36,7 +24,7 @@ export default function FormAuth() {
                             <Input
                                 id="email"
                                 type="email"
-                                placeholder="m@example.com"
+                                placeholder="email@example.com"
                                 required
                             />
                         </div>
@@ -50,7 +38,7 @@ export default function FormAuth() {
                                     Forgot your password?
                                 </Link>
                             </div>
-                            <Input id="password" type="password" required />
+                            <Input id="password" type="password" required/>
                         </div>
                     </div>
                 </form>
@@ -60,10 +48,14 @@ export default function FormAuth() {
                     Login
                 </Button>
                 <Button type="button" className="w-full" asChild>
-                    <button onClick={async ()=>{ await GoogleSignIn()}}>
-                    Login with Google
+                    <button onClick={async () => {
+                        await GoogleSignIn()
+                    }}>
+                        Login with Google <FaGoogle/>
                     </button>
                 </Button>
+                <Link href="/sign-up" className="hover:underline underline-offset-4">Don&apos;t have an account? <span
+                    className="font-bold">Register</span></Link>
             </CardFooter>
         </Card>
     )

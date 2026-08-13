@@ -1,9 +1,9 @@
-import { NextRequest, NextResponse } from "next/server";
-import { betterFetch } from "@better-fetch/fetch";
-import type { Session } from "better-auth/types";
+import {NextRequest, NextResponse} from "next/server";
+import {betterFetch} from "@better-fetch/fetch";
+import type {Session} from "better-auth/types";
 
 export async function proxy(request: NextRequest) {
-    const { data: session } = await betterFetch<Session>(
+    const {data: session} = await betterFetch<Session>(
         "/api/auth/get-session",
         {
             baseURL: request.nextUrl.origin,
@@ -21,5 +21,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-    matcher: ["/home"],
+    matcher: ["/home", "/editor/:path*", "/profile/:path*", "/profile/:path*/favorites",],
 };
